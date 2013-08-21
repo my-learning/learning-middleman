@@ -1,0 +1,353 @@
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi     -lruby-static  -lpthread -ldl -lobjc "
+ld: warning: ignoring file /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi     -lruby-static  -lpthread -ldl -lobjc "
+ld: warning: ignoring file /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+package configuration for libffi
+cflags: -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include
+ldflags: -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib
+libs: -lffi
+
+have_library: checking for ffi_call() in -lffi... -------------------- no
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static -lffi  -lffi -lpthread -ldl -lobjc "
+ld: warning: ignoring file /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib
+Undefined symbols for architecture x86_64:
+  "_ffi_call", referenced from:
+      _t in cc2IqLb9.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ffi.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_call; return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static -lffi  -lffi -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:7: error: too few arguments to function ‘ffi_call’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ffi.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int t(void) { ffi_call(); return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+--------------------
+
+have_library: checking for ffi_call() in -llibffi... -------------------- no
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static -llibffi  -lffi -lpthread -ldl -lobjc "
+ld: library not found for -llibffi
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ffi.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_call; return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static -llibffi  -lffi -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:7: error: too few arguments to function ‘ffi_call’
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <ffi.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int t(void) { ffi_call(); return 0; }
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     printf("%p", &t);
+12:   }
+13: 
+14:   return 0;
+15: }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_raw_call()... -------------------- no
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘ffi_raw_call’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_raw_call; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+ld: warning: ignoring file /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib
+Undefined symbols for architecture x86_64:
+  "_ffi_raw_call", referenced from:
+      _t in ccUnCdXq.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { ffi_raw_call(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_blocking_region()... -------------------- yes
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:5: warning: ‘rb_thread_blocking_region’ is deprecated (declared at /Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/intern.h:839)
+ld: warning: ignoring file /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_with_gvl()... -------------------- yes
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘rb_thread_call_with_gvl’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_with_gvl; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+ld: warning: ignoring file /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { rb_thread_call_with_gvl(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_func: checking for rb_thread_call_without_gvl()... -------------------- yes
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘rb_thread_call_without_gvl’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_call_without_gvl; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+ld: warning: ignoring file /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { rb_thread_call_without_gvl(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_func: checking for ffi_prep_cif_var()... -------------------- no
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:5: error: ‘ffi_prep_cif_var’ undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))ffi_prep_cif_var; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+"gcc-4.2 -o conftest -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/x86_64-darwin12.4.0 -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0/ruby/backward -I/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include/ruby-2.0.0 -I. -I'/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -O3 -Wno-error=shorten-64-to-32  -pipe -I/Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi-3.0.11/include conftest.c  -L. -L/Users/matsuzakikeiji/.rbenv/versions/2.0.0-p247/lib -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib -lffi -L/Library/Frameworks/Mono.framework/Versions/2.10.11/lib     -lffi -lruby-static  -lffi -lpthread -ldl -lobjc "
+ld: warning: ignoring file /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib, file was built for unsupported file format ( 0xce 0xfa 0xed 0xfe 0x 7 0x 0 0x 0 0x 0 0x 3 0x 0 0x 0 0x 0 0x 6 0x 0 0x 0 0x 0 ) which is not the architecture being linked (x86_64): /Library/Frameworks/Mono.framework/Versions/2.10.11/lib/libffi.dylib
+Undefined symbols for architecture x86_64:
+  "_ffi_prep_cif_var", referenced from:
+      _t in ccCE1urO.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { ffi_prep_cif_var(); return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_RB_THREAD_BLOCKING_REGION 1
+4: #define HAVE_RB_THREAD_CALL_WITH_GVL 1
+5: #define HAVE_RB_THREAD_CALL_WITHOUT_GVL 1
+6: #define USE_INTERNAL_LIBFFI 1
+7: #define RUBY_1_9 1
+8: #endif
+/* end */
+
