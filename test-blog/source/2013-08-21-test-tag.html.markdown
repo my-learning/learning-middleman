@@ -1,0 +1,23 @@
+---
+title: test tag
+date: 2013/8/21
+tags: notebook, test
+---
+
+```ruby
+puts "Hello world"
+```
+
+```javascript
+$(function() {
+  console.log("Hello world");
+});
+```
+
+```python
+class Person(object):
+  def __init__(self, name):
+    self.name = name
+```
+
+
