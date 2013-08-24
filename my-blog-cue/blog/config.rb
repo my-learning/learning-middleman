@@ -6,6 +6,7 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true
 activate :rouge_syntax
 
 activate :blog do |blog|
+  blog.layout = "layout"
   blog.tag_template = "tag.html"
   blog.calendar_template = "calendar.html"
 
@@ -15,6 +16,10 @@ activate :blog do |blog|
 end
 
 page "/feed.xml", :layout => false
+page "/articles.html", :layout => "articles"
+page "/tags.html", :layout => "tags"
+page "/year.html", :layout => "year"
+page "/me.html", :layout => "me"
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'
